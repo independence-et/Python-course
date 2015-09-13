@@ -1,2 +1,3 @@
 # Python-course
-Репозиторий для вывставления напоказ результатов работы над домашними заданиями.
+Evgenii Tolstyko
+Repository for Python homework
