@@ -1,26 +1,26 @@
 __author__ = 'independence'
 a=str(input())
 c=str
-if a == 'óòşã':
+if a == 'ÑƒÑ‚ÑĞ³':
     b = int(input())
     if 11 <= b%100 <= 14:
-        c = 'óòşãîâ'
+        c = 'ÑƒÑ‚ÑĞ³Ğ¾Ğ²'
     elif b%10 == 1:
         c = a
     elif 2 <= b%10 <=4:
-        c = 'óòşãà'
+        c = 'ÑƒÑ‚ÑĞ³Ğ°'
     else:
-        c = 'óòşãîâ'
+        c = 'ÑƒÑ‚ÑĞ³Ğ¾Ğ²'
     print(b,c)
-elif a == 'ëîæêà':
+elif a == 'Ğ»Ğ¾Ğ¶ĞºĞ°':
     b = int(input())
     if 11 <= b%100 <= 14:
-        c = 'ëîæåê'
+        c = 'Ğ»Ğ¾Ğ¶ĞµĞº'
     elif b%10 == 1:
         c = a
     elif 2 <= b%10 <=4:
-        c = 'ëîæêè'
+        c = 'Ğ»Ğ¾Ğ¶ĞºĞ¸'
     else:
-        c = 'ëîæåê'
+        c = 'Ğ»Ğ¾Ğ¶ĞµĞº'
     print(b,c)
-else: print('ÿ òàê íå èãğàş')
+else: print('Ñ Ñ‚Ğ°Ğº Ğ½Ğµ Ğ¸Ğ³Ñ€Ğ°Ñ')
