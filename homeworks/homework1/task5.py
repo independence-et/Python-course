@@ -2,8 +2,8 @@ __author__ = 'independence'
 str0 = 'abcdefghijklmnopqrstuvwxyz'
 dict1 = {}
 for i in range(26):
-   dict1[i+1] = str0[i]
-str00 = inp ut()
+    dict1[i+1] = str0[i]
+str00 = input()
 str1 = str00 + ' '
 m = 0
 for i in range(26):
