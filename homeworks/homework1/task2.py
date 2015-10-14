@@ -1,27 +1,23 @@
-__author__ = 'independence'
-a = str(input())
-c = str
-if a == 'утюг':
-    b = int(input())
-    if 11 <= b % 100 <= 14:
-        c = 'утюгов'
-    elif b % 10 == 1:
-        c = a
-    elif 2 <= b % 10 <= 4:
-        c = 'утюга'
+__author__ = 'Independence'
+st = str(input())
+st = st + ' '
+c = 0
+s = 0
+l = 0
+n = 1
+for i in range(len(st)):
+    if st[i] == ' ':
+        s = s + c*n
+        c = 0
+        i = i + 1
+        l = l + 1
+        n = 1
+    elif st[i] == '-':
+        n = -1
+        i = i + 1
     else:
-        c = 'утюгов'
-    print(b, c)
-elif a == 'ложка':
-    b = int(input())
-    if 11 <= b % 100 <= 14:
-        c = 'ложек'
-    elif b % 10 == 1:
-        c = a
-    elif 2 <= b % 10 <= 4:
-        c = 'ложки'
-    else:
-        c = 'ложек'
-    print(b, c)
-else:
-    print('я так не играю')
+        c = c * 10
+        c = c + int(st[i])
+        i = i + 1
+m = s / l
+print(m)

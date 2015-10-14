@@ -1,23 +1,23 @@
-__author__ = 'independence'
-st = str(input())
-st = st + ' '
+__author__ = 'Independence'
+lst = []
 c = 0
-s = 0
-l = 0
-n = 1
-for i in range(len(st)):
-    if st[i] == ' ':
-        s = s + c*n
+str0 = input()
+str1 = ''
+for i in range(len(str0)):
+    if str0[i] == ' ':
+        lst.append(c)
         c = 0
-        i = i + 1
-        l = l + 1
-        n = 1
-    elif st[i] == '-':
-        n = -1
         i = i + 1
     else:
         c = c * 10
-        c = c + int(st[i])
+        c = c + int(str0[i])
         i = i + 1
-m = s / l
-print(m)
+lst.append(c)
+lst1 = lst[::2]
+lst2 = lst[1:len(lst):2]
+lst1.sort()
+lst2.sort(reverse=True)
+for i in range(len(lst1)):
+    str1 = str1 + str(lst1[i]) + ' ' + str(lst2[i]) + ' '
+    i = i + 1
+print(str1)

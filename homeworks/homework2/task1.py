@@ -1,24 +1,15 @@
-__author__ = 'independence'
+__author__ = 'Independence'
 
 
-def plural(num, word):
-    words = ['утюг', 'утюга', 'утюгов', 'ложка', 'ложки', 'ложек', 'гармошка',
-             'гармошки', 'гармошек', 'чайник', 'чайника', 'чайников']
-    if word in words:
-        a = words.index(word)
-        if a in [1, 2, 4, 5, 7, 8, 10, 11]:
-            print('Похоже, вы и без меня справитесь.')
-        elif 11 <= num % 100 <= 14:
-            a = a + 2
-        elif num % 10 == 1:
-            a = a
-        elif 2 <= num % 10 <= 4:
-            a = a + 1
-        else:
-            a = a + 2
-        print(num, words[a])
+def combinations(n, k):
+    if n < 0 or k < 0:
+        print('Error in combinations, you will die')
+    elif k > n:
+        return 0
+    elif k == n or k == 0:
+        return 1
     else:
-        print('Facepalm')
-user_word = str(input())
-user_num = int(input())
-plural(user_num, user_word)
+        return combinations(n-1, k-1) + combinations(n-1, k)
+inp = str(input())
+inp = inp.split(' ')
+print(combinations(int(inp[0]), int(inp[1])))

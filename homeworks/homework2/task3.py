@@ -1,22 +1,11 @@
 __author__ = 'Independence'
 
 
-def prime(x):
-    result = True
-    if x <= 1:
-        result = False
-    elif x == 2:
-        result = True
-    else:
-        for i in range(x // 2):
-            if x % (i + 2) == 0:
-                result = False
-                break
-    return(result)
-n = int(input())
-lst1 = []
-for i in range(n):
-    x = int(input())
-    lst1.append(prime(x))
-for i in range(n):
-    print(lst1[i])
+def euclid(n, m):
+    if n % m == 0:
+        return m
+    return euclid(m, n % m)
+
+inp = str(input())
+inp = inp.split(' ')
+print(euclid(int(inp[0]), int(inp[1])))
