@@ -8,16 +8,15 @@ def euclid(n, m):
 
 
 def rpfilter(a, *args):
-    result = str()
+    result = list()
     for arg in args:
-        arg = int(arg)
         if euclid(a, arg) == 1:
-            result = result + " " + str(arg)
-    return result[1:]
+            result.append(arg)
+    return result
 
 inp = input().split(' ')
 inp = [int(i) for i in inp]
 if len(rpfilter(*inp)) == 0:
     print(None)
 else:
-    print(rpfilter(*inp))
+    print(*rpfilter(*inp))
