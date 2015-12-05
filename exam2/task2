@@ -1,0 +1,23 @@
+import requests
+import re
+__author__ = 'independence'
+
+
+file0 = open("links.txt", "r")
+file1 = file0.read().split("\n")
+adresses = list()
+adress_count = list()
+
+for link in file1:
+    data = requests.get(link).text
+    x = re.findall("([\w*.]*\w+@\w*[.\w*]*)", data)
+    for elem in x:
+        if elem in adresses:
+            adress_count[adresses.index(elem)] += 1
+        else:
+            adresses.append(elem)
+            adress_count.append(1)
+
+file_ans = open("email_addresses.txt", "w")
+for adress in adresses:
+    file_ans.write(adress + '\n')
