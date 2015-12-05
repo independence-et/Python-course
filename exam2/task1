@@ -1,0 +1,28 @@
+import re
+__author__ = 'independence'
+
+
+file0 = open("hp5.txt", "r")
+file1 = (file0.read())
+x = re.findall("[A-Z]\w* *\w* whisp\w+", file1)
+y = re.findall("whisp\w+ \w* *[A-Z]\w*", file1)
+names = list()
+names_count = list()
+for i in x:
+    name = re.sub(" [a-z]\w*", "", i)
+    if name in names:
+        names_count[names.index(name)] += 1
+    else:
+        names.append(name)
+        names_count.append(1)
+for i in y:
+    name = re.sub(" [a-z]\w*", "", i)
+    name = re.sub("whisp\w* ", "", name)
+    if name in names:
+        names_count[names.index(name)] += 1
+    else:
+        names.append(name)
+        names_count.append(1)
+
+print(max(names_count))
+print(names[names_count.index(max(names_count))])
