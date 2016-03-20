@@ -28,9 +28,9 @@ while 999 < 1000:  # endless cycle^^^
             if int(lengthstring) >= 1350:  # getting rid of too short sequences
                 Identifiers[GBN] = GI[0]
                 score += 1
-                print("scored" + " " + str(n) + " " + lengthstring + " " + GBN + " " "score=" + str(score))
+                print("scored " + str(n) + " " + lengthstring + " " + GBN + " score=" + str(score))
             else:
-                print("not scored" + " " + str(n) + " " + lengthstring + " " + GBN + " " + "score=" + str(score))
+                print("not scored " + str(n) + " " + lengthstring + " " + GBN + " score=" + str(score))
     next = driver.find_elements_by_id("EntrezSystem2.PEntrez.Nuccore.Sequence_ResultsPanel.Entrez_Pager.Page")
     if len(next) == 8:
         next[2].click()  # clicking on "next" button
