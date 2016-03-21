@@ -25,7 +25,7 @@ while 999 < 1000: #endless cycle^^^
         GI = re.findall(string2, data) #retrieving GI number
         if len(GI) != 0 and len(length) != 0: #it made to avoid listindexerror
             lengthstring = re.sub(",", "", length[0])
-            if int(lengthstring) >= 1350: #getting rid of too short sequences
+            if int(lengthstring) >= 1353: #getting rid of too short sequences
                 Identifiers[GBN] = GI[0]
                 score += 1
                 print("scored" + " " + str(n) + " " + lengthstring + " " + GBN + " " "score=" + str(score))
