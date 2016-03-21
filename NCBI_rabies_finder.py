@@ -25,16 +25,12 @@ while 999 < 1000:  # endless cycle^^^
         GI = re.findall(string2, data)  # retrieving GI number
         if len(GI) != 0 and len(length) != 0:  # it made to avoid listindexerror
             lengthstring = re.sub(",", "", length[0])
-<<<<<<< HEAD
-            if int(lengthstring) >= 1353: #getting rid of too short sequences
-=======
-            if int(lengthstring) >= 1350:  # getting rid of too short sequences
->>>>>>> a135711f62db717cb6f91571d56a8df398121b29
+            if int(lengthstring) >= 1353:  # getting rid of too short sequences
                 Identifiers[GBN] = GI[0]
                 score += 1
-                print("scored " + str(n) + " " + lengthstring + " " + GBN + " score=" + str(score))
+                print("scored" + " " + str(n) + " " + lengthstring + " " + GBN + " " "score=" + str(score))
             else:
-                print("not scored " + str(n) + " " + lengthstring + " " + GBN + " score=" + str(score))
+                print("not scored" + " " + str(n) + " " + lengthstring + " " + GBN + " " + "score=" + str(score))
     next = driver.find_elements_by_id("EntrezSystem2.PEntrez.Nuccore.Sequence_ResultsPanel.Entrez_Pager.Page")
     if len(next) == 8:
         next[2].click()  # clicking on "next" button
