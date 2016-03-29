@@ -4,11 +4,15 @@ import shutil
 import subprocess
 
 TheFolder = "A:\sad\\"
-parser = argparse.ArgumentParser(description="store and diff script")
+parser = argparse.ArgumentParser(description="Store and diff script. "
+                                             "This thing can only store and compare any files. "
+                                             "Type \"path-to-sad.py [command] path-to-file\". "
+                                             "Command must be \"store\"(to store the file)"
+                                             "or \"diff\"(to compare file with it's stored clone). "
+                                             "Or launch with --help to get more info")
 parser.add_argument("command",
                     type=str,
-                    default="None",
-                    choices=["store", "diff", "None"],
+                    choices=["store", "diff"],
                     nargs="?",
                     help="type \"store\" or \"diff\"")
 
@@ -18,12 +22,8 @@ parser.add_argument('path',
                     nargs="?",
                     help="full path to file")
 args = parser.parse_args()
-if args.command == "None":
-    print("this thing can only store and compare any files")
-    print("type \"path-to-sad.py [command] path-to-file\"")
-    print("command must be \"store\"(to store the file) "
-          "or \"diff\"(to compare file with it's stored clone)")
-    print("or launch with --help to get more info")
+if args.command is None:
+    print("Type a command!")
 elif os.path.isfile(args.path) is False:
     print("File not found or path is not stated")
 else:
