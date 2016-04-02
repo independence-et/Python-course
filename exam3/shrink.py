@@ -16,6 +16,8 @@ parser.add_argument('new_path',
                     type=str,
                     nargs="?")
 args = parser.parse_args()
+
+
 def press(path1, path2):
     subprocess.run("convert " + path1 + " -resize " + str(args.percent) + "% " + path2, shell=True)
 if os.path.isdir(args.path) == True:
