@@ -5,7 +5,6 @@ import subprocess
 parser = argparse.ArgumentParser(description="image_shrinker")
 parser.add_argument("percent",
                     type=int,
-                    nargs="?",
                     help="percentage you need to shrink")
 
 parser.add_argument('path',
@@ -18,10 +17,8 @@ parser.add_argument('new_path',
                     nargs="?")
 args = parser.parse_args()
 def press(path1, path2):
-    subprocess.run("convert " + path1 + " -resize " + str(args.percent) + "% " + path2)
-if args.percent is None:
-    print("Type a percentage!")
-elif os.path.isdir(args.path) == True:
+    subprocess.run("convert " + path1 + " -resize " + str(args.percent) + "% " + path2, shell=True)
+if os.path.isdir(args.path) == True:
     pathes = list()
     for d, dirs, files in os.walk(args.path):
         for f in files:
