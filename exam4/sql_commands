@@ -1,0 +1,12 @@
+1. select * from users order by username asc;
+2. select * from users order by registered desc limit 5;
+3. select user_id, count(*) from listened group by user_id order by count(*) desc limit 5;
+4. select artists.name, count(*) from artists inner join albums on artist_id = artists.id group by artists.name;
+5. select artists.name, count(*) from artists inner join albums on artist_id = artists.id inner join songs on album_id = albums.id group by artists.name;
+6. select artists.name, albums.name, count(*) from artists inner join albums on artist_id = artists.id inner join songs on album_id = albums.id group by albums.name order by count(*) desc limit 1;
+7. select artists.name, albums.name, sum(songs.duration) from artists inner join albums on artist_id = artists.id inner join songs on album_id = albums.id group by albums.name order by sum(songs.duration) desc limit 1;
+8. select artists.name, albums.name, sum(songs.duration)/count(*) from artists inner join albums on artist_id = artists.id inner join songs on album_id = albums.id group by albums.name order by sum(songs.duration)/count(*) desc limit 1;
+9. select artists.name, albums.name, songs.name, count(*) from artists inner join albums on artist_id = artists.id inner join songs on album_id = albums.id inner join listened on song_id = songs.id group by songs.id order by count(*) desc limit 5;
+10. select albums.release_year, count(*) from albums inner join songs on album_id = albums.id inner join listened on song_id = songs.id group by albums.release_year order by count(*) desc limit 1;
+
+## поскольку переписывал сюда команды ручками, туда могла закрастся какая-нибудь опечатка. Но я очень надеюсь, что этого всё же не случилось)
