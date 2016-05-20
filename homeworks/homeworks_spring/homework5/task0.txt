@@ -1,0 +1,13 @@
+1.  select * from users;
+2.  select count(*) from users;
+3.  select count(birth_date) from users where birth_date <= date("1976-05-14");
+4.  select country, count(*) from users group by country;
+5.  select count(*) - count(distinct name) from users;
+6.  select count(created) from orders where created like "2016%";
+7.  select strftime('%d-%m-%Y', created),count(*) from Orders group by strftime('%d-%m-%Y', created) order by count(*) desc limit 5;
+8.  select 100 - 100*sum(paid)/count(*) from orders;
+9.  select * from goods where name like "%bread%";
+10. select goods.id, goods.name, count(*) from goods inner join GoodsInOrders on good_id = goods.id group by goods.id order by count(*) desc limit 10;
+11. select sum(price) from orders inner join GoodsInOrders on order_id = orders.id inner join Goods on Goods.id = GoodsInOrders.good_id where created like "2016%" and paid = 1;
+12. select goods.id, goods.name, count(*) from users inner join orders on user_id = users.id inner join GoodsInOrders on order_id = orders.id inner join goods on goods.id = GoodsInOrders.good_id where users.gender = "F" group by goods.id order by count(*) desc limit 10;
+13. select users.id, users.name, sum(quantity) from users inner join orders on user_id = users.id inner join GoodsInOrders on order_id = orders.id inner join goods on goods.id = GoodsInOrders.good_id where goods.units = "KG" group by users.id order by sum(quantity) desc limit 10;
