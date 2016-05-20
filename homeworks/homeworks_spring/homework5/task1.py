@@ -2,7 +2,6 @@ import sqlite3
 
 
 def unpaid(user_id):
-    # import sqlite3  - if it is necessary within function
     with sqlite3.connect("data.sqlite") as con:
         cur = con.cursor()
         data = cur.execute("select users.name, orders.id, sum(price) from users "
